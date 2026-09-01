@@ -10,6 +10,7 @@
             --primary: #1b1464;
             --secondary: #3023ae;
             --accent: #ff5e57;
+            --accent-gold: #f39c12;
             --whatsapp: #25d366;
             --bg-light: #f8f9fc;
             --text-dark: #2d3436;
@@ -46,8 +47,8 @@
 
         /* Header & Navigation */
         header {
-            background: var(--white);
-            color: var(--text-dark);
+            background: var(--primary);
+            color: var(--white);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -55,20 +56,26 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .logo-area h1 {
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text h1 {
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--white);
             letter-spacing: 0.5px;
         }
 
-        .logo-area span {
+        .logo-text span {
             font-size: 0.75rem;
             display: block;
-            color: var(--text-light);
+            color: var(--accent-gold);
             font-weight: 400;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -82,7 +89,7 @@
         }
 
         nav ul li a {
-            color: var(--text-dark);
+            color: var(--white);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
@@ -90,7 +97,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent);
+            color: var(--accent-gold);
         }
 
         .nav-whatsapp {
@@ -113,23 +120,32 @@
             background-color: #20ba5a;
         }
 
-        /* Hero Section with Immersive Travel Background */
+        /* Hero Section with Maldives/Bali Beach & Villa Background */
         .hero {
-            background: linear-gradient(rgba(27, 20, 100, 0.65), rgba(48, 35, 174, 0.75)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(27, 20, 100, 0.75), rgba(48, 35, 174, 0.75)), url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
             text-align: center;
-            padding: 6rem 5% 5rem;
+            padding: 5rem 5% 4rem;
         }
 
         .hero h1 {
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1rem;
-            max-width: 800px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+            display: block;
+            font-family: cursive;
+            font-size: 2.5rem;
+            text-transform: capitalize;
         }
 
         .hero p {
@@ -140,16 +156,38 @@
             opacity: 0.95;
         }
 
+        .special-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px 20px;
+            max-width: 500px;
+            margin: 0 auto 2.5rem auto;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .special-badge h3 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .special-badge p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
         /* Destination Slicer Widget */
         .search-widget {
             background: var(--white);
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 140px;
+            grid-template-columns: 1fr 140px;
             gap: 15px;
             align-items: center;
         }
@@ -195,33 +233,6 @@
             transform: translateY(-2px);
         }
 
-        /* Trust Badges Bar */
-        .trust-strip {
-            background: var(--white);
-            padding: 2rem 5%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        .trust-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .trust-item h4 {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .trust-item p {
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
-
         /* Container Layouts */
         .container {
             max-width: 1200px;
@@ -230,9 +241,6 @@
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
             margin-bottom: 2.5rem;
         }
 
@@ -350,51 +358,113 @@
             background-color: #20ba5a;
         }
 
-        /* Footer */
+        /* About Section at Bottom */
+        .about-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .about-container .tagline {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .stat-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: var(--white);
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Contact Bar & Footer */
+        .contact-bar {
+            background: var(--accent-gold);
+            color: var(--primary);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         footer {
             background-color: #0e0a36;
             color: #a4b0be;
             text-align: center;
-            padding: 3rem 5%;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .search-widget {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                display: none;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .search-widget { grid-template-columns: 1fr; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
     <div class="top-bar">
         <span>✨ Curating Memories</span>
         <span>Contact: +91 89681 16848</span>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="logo-area">
-            <h1>MANZIL MUBARAK</h1>
-            <span>Your trusted partner in every escape.</span>
+            <div class="logo-text">
+                <h1>MM</h1>
+                <span>MANZIL MUBARAK</span>
+            </div>
         </div>
         <nav>
             <ul>
-                <li><a href="#international">International</a></li>
-                <li><a href="#domestic">Domestic</a></li>
-                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#about">About Us</a></li>
             </ul>
         </nav>
         <a href="https://wa.me/918968116848?text=Hi%20Manzil%20Mubarak,%20I%20want%20to%20plan%20a%20trip." class="nav-whatsapp" target="_blank">
@@ -402,17 +472,20 @@
         </a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h1>Your trusted partner in every escape.</h1>
-        <p>Unleash your inner explorer with handpicked group trips, customized getaways, and seamless travel support.</p>
+        <h1>Discover Your Next <span>Adventure</span></h1>
+        <p>Your trusted partner in every escape. Handcrafted getaways tailored to perfection.</p>
         
-        <!-- Destination Slicer Widget -->
+        <div class="special-badge">
+            <h3>Special Offer</h3>
+            <p>Book your trip at least 6 months in advance and save up to 30%!</p>
+        </div>
+
         <div class="search-widget">
             <div class="search-field">
-                <label>Select Destination Slicer</label>
+                <label>Explore</label>
                 <select id="destinationSlicer" onchange="filterDestination()">
-                    <option value="all">All Destinations (Show All)</option>
+                    <option value="all">All destinations</option>
                     <option value="bali">Bali</option>
                     <option value="dubai">Dubai</option>
                     <option value="maldives">Maldives</option>
@@ -423,35 +496,14 @@
                     <option value="kashmir">Kashmir</option>
                 </select>
             </div>
-            <button class="search-btn" onclick="filterDestination()">Apply Slicer</button>
+            <button class="search-btn" onclick="filterDestination()">Search</button>
         </div>
     </section>
 
-    <!-- Trust Badges -->
-    <section class="trust-strip" id="why-us">
-        <div class="trust-grid">
-            <div class="trust-item">
-                <h4>🤝 100% Reliable</h4>
-                <p>Seamless transport and expert ground assistance.</p>
-            </div>
-            <div class="trust-item">
-                <h4>🌟 Expert Trip Captains</h4>
-                <p>Your travel buddies and storytellers on every trip.</p>
-            </div>
-            <div class="trust-item">
-                <h4>🏨 Handpicked Properties</h4>
-                <p>Verified 4+ star comfort and authentic local stays.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- International Packages -->
-    <section class="container" id="international">
+    <section class="container" id="packages">
         <div class="section-header">
-            <div>
-                <h2>International Gateways</h2>
-                <p>Cross borders into vibrant cultures and luxury escapes.</p>
-            </div>
+            <h2>International Gateways</h2>
+            <p>Cross borders into vibrant cultures and luxury escapes.</p>
         </div>
         <div class="grid" id="internationalGrid">
             <div class="card" data-dest="bali">
@@ -556,13 +608,10 @@
         </div>
     </section>
 
-    <!-- Domestic Packages -->
     <section class="container" id="domestic" style="padding-top: 0;">
         <div class="section-header">
-            <div>
-                <h2>Domestic Explorations</h2>
-                <p>Discover breathtaking mountains, backwaters, and pristine beaches.</p>
-            </div>
+            <h2>Domestic Explorations</h2>
+            <p>Discover breathtaking mountains, backwaters, and pristine beaches.</p>
         </div>
         <div class="grid" id="domesticGrid">
             <div class="card" data-dest="kerala">
@@ -627,13 +676,45 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <div class="tagline">Your Trusted Partner in Every Escape</div>
+            <div class="about-text">
+                <p>Founded in 2024 and proudly based in Jalandhar, Punjab, Manzil Mubarak is a passionate travel company dedicated to crafting unforgettable journeys. We specialize in end-to-end international and domestic packages — specially curated for Couples & Families — backed by 24×7 customer support.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2000+</h3>
+                    <p>Packages Curated</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24 × 7</h3>
+                    <p>Dedicated Support</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Couples & Families</h3>
+                    <p>Specialized Travel Plans</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Est. 2024</h3>
+                    <p>Jalandhar, Punjab</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-bar">
+        <div>📞 Phone: +91 89681 16848</div>
+        <div>✉️ E-Mail: manzilmubarakinfo@gmail.com</div>
+        <div>🌐 Website: www.manzilmubarak.in</div>
+        <div>📍 Address: Jalandhar, Punjab</div>
+    </div>
+
     <footer>
-        <p><strong>www.manzilmubarak.in</strong> — Your trusted partner in every escape.</p>
-        <p>Connect instantly with our experts on WhatsApp: +91 89681 16848</p>
+        <p>&copy; 2026 Manzil Mubarak. All Rights Reserved. Your Trusted Partner in Every Escape.</p>
     </footer>
 
-    <!-- Slicer Filter JavaScript -->
     <script>
         function filterDestination() {
             const selectedVal = document.getElementById("destinationSlicer").value;
@@ -648,9 +729,8 @@
                 }
             });
 
-            // Scroll down smoothly to show results if a specific destination is chosen
             if(selectedVal !== "all") {
-                document.getElementById("international").scrollIntoView({ behavior: 'smooth' });
+                document.getElementById("packages").scrollIntoView({ behavior: 'smooth' });
             }
         }
     </script>
