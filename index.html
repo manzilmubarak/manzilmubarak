@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manzil Mubarak | Your trusted partner in every escape.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1b1464;
+            --secondary: #3023ae;
+            --accent: #ff5e57;
+            --whatsapp: #25d366;
+            --bg-light: #f8f9fc;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #0e0a36;
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo-area h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-area span {
+            font-size: 0.75rem;
+            display: block;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .nav-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .nav-whatsapp:hover {
+            transform: translateY(-2px);
+            background-color: #20ba5a;
+        }
+
+        /* Hero Section with Immersive Travel Background */
+        .hero {
+            background: linear-gradient(rgba(27, 20, 100, 0.65), rgba(48, 35, 174, 0.75)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 5% 5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* Destination Slicer Widget */
+        .search-widget {
+            background: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 140px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-field {
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .search-field label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .search-field select {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Trust Badges Bar */
+        .trust-strip {
+            background: var(--white);
+            padding: 2rem 5%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .trust-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .trust-item p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Container Layouts */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card-img-wrapper {
+            height: 220px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--white);
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .card-body p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            min-height: 45px;
+        }
+
+        .card-footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .price span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .original-price {
+            font-size: 0.95rem;
+            color: #b2bec3;
+            text-decoration: line-through;
+        }
+
+        .price strong {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .book-btn {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .book-btn:hover {
+            background-color: #20ba5a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0e0a36;
+            color: #a4b0be;
+            text-align: center;
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .search-widget {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>✨ Curating Memories</span>
+        <span>Contact: +91 89681 16848</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <h1>MANZIL MUBARAK</h1>
+            <span>Your trusted partner in every escape.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#international">International</a></li>
+                <li><a href="#domestic">Domestic</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/918968116848?text=Hi%20Manzil%20Mubarak,%20I%20want%20to%20plan%20a%20trip." class="nav-whatsapp" target="_blank">
+            Chat on WhatsApp
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your trusted partner in every escape.</h1>
+        <p>Unleash your inner explorer with handpicked group trips, customized getaways, and seamless travel support.</p>
+        
+        <!-- Destination Slicer Widget -->
+        <div class="search-widget">
+            <div class="search-field">
+                <label>Select Destination Slicer</label>
+                <select id="destinationSlicer" onchange="filterDestination()">
+                    <option value="all">All Destinations (Show All)</option>
+                    <option value="bali">Bali</option>
+                    <option value="dubai">Dubai</option>
+                    <option value="maldives">Maldives</option>
+                    <option value="singapore">Singapore</option>
+                    <option value="thailand">Thailand</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="andaman">Andaman</option>
+                    <option value="kashmir">Kashmir</option>
+                </select>
+            </div>
+            <button class="search-btn" onclick="filterDestination()">Apply Slicer</button>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-strip" id="why-us">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h4>🤝 100% Reliable</h4>
+                <p>Seamless transport and expert ground assistance.</p>
+            </div>
+            <div class="trust-item">
+                <h4>🌟 Expert Trip Captains</h4>
+                <p>Your travel buddies and storytellers on every trip.</p>
+            </div>
+            <div class="trust-item">
+                <h4>🏨 Handpicked Properties</h4>
+                <p>Verified 4+ star comfort and authentic local stays.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Packages -->
+    <section class="container" id="international">
+        <div class="section-header">
+            <div>
+                <h2>International Gateways</h2>
+                <p>Cross borders into vibrant cultures and luxury escapes.</p>
+            </div>
+        </div>
+        <div class="grid" id="internationalGrid">
+            <div class="card" data-dest="bali">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">International</span>
+                </div>
+                <div class="card-body">
+                    <h3>Bali</h3>
+                    <p>Ubud rainforests, sacred temples, and private beach villas.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹45,000</span>
+                                <strong>₹35,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Bali%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="dubai">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">International</span>
+                </div>
+                <div class="card-body">
+                    <h3>Dubai</h3>
+                    <p>Burj Khalifa views, desert safari adventures, and modern luxury.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹45,000</span>
+                                <strong>₹35,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Dubai%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="maldives">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">International</span>
+                </div>
+                <div class="card-body">
+                    <h3>Maldives</h3>
+                    <p>Overwater bungalows, crystal clear lagoons, and pristine coral reefs.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹1,25,000</span>
+                                <strong>₹1,10,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Maldives%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="singapore">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">International</span>
+                </div>
+                <div class="card-body">
+                    <h3>Singapore</h3>
+                    <p>Marina Bay Sands, Sentosa Island excitement, and futuristic gardens.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹1,10,000</span>
+                                <strong>₹95,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Singapore%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="thailand">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">International</span>
+                </div>
+                <div class="card-body">
+                    <h3>Thailand</h3>
+                    <p>Bangkok city sights, Phuket beaches, and island hopping.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹55,000</span>
+                                <strong>₹45,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Thailand%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domestic Packages -->
+    <section class="container" id="domestic" style="padding-top: 0;">
+        <div class="section-header">
+            <div>
+                <h2>Domestic Explorations</h2>
+                <p>Discover breathtaking mountains, backwaters, and pristine beaches.</p>
+            </div>
+        </div>
+        <div class="grid" id="domesticGrid">
+            <div class="card" data-dest="kerala">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">Domestic</span>
+                </div>
+                <div class="card-body">
+                    <h3>Kerala</h3>
+                    <p>Alleppey backwater houseboats and Munnar green tea gardens.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹25,000</span>
+                                <strong>₹20,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Kerala%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="andaman">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">Domestic</span>
+                </div>
+                <div class="card-body">
+                    <h3>Andaman</h3>
+                    <p>Radhanagar beach, scuba diving experiences, and cellular light shows.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹25,000</span>
+                                <strong>₹20,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Andaman%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dest="kashmir">
+                <div class="card-img-wrapper" style="background-image: url('https://images.unsplash.com/photo-1598091383028-08d0e9882297?auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">Domestic</span>
+                </div>
+                <div class="card-body">
+                    <h3>Kashmir</h3>
+                    <p>Dal Lake shikaras, Gulmarg snow meadows, and Pahalgam views.</p>
+                    <div class="card-footer-info">
+                        <div class="price">
+                            <span>Starting from</span>
+                            <div class="price-container">
+                                <span class="original-price">₹15,000</span>
+                                <strong>₹11,000</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/918968116848?text=Hi,%20I%20want%20to%20book%20the%20Kashmir%20package." class="book-btn" target="_blank">Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>www.manzilmubarak.in</strong> — Your trusted partner in every escape.</p>
+        <p>Connect instantly with our experts on WhatsApp: +91 89681 16848</p>
+    </footer>
+
+    <!-- Slicer Filter JavaScript -->
+    <script>
+        function filterDestination() {
+            const selectedVal = document.getElementById("destinationSlicer").value;
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                const dest = card.getAttribute("data-dest");
+                if (selectedVal === "all" || dest === selectedVal) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Scroll down smoothly to show results if a specific destination is chosen
+            if(selectedVal !== "all") {
+                document.getElementById("international").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
